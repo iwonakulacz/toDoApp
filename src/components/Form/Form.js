@@ -9,7 +9,7 @@ class Form extends React.Component {
 
   handleInputChange = e => {
     this.setState({
-        [e.target.name]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
@@ -17,32 +17,39 @@ class Form extends React.Component {
     e.preventDefault();
     const id = new Date().getTime();
     this.setState({
-      id 
+      id
     });
     this.props.addTask(this.state);
     this.setState({
-      content: '',
-      user: ''
-    })
-  }
+      content: "",
+      user: ""
+    });
+  };
 
   render() {
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)}>
-        <input
-          type="text"
-          value={this.state.content}
-          name="content"
-          onChange={this.handleInputChange}
-        />
-        <select value={this.state.user} name="user" onChange={this.handleInputChange}>
-          <option value="anna">anna</option>
-          <option value="tom">tom</option>
-          <option value="mat">mat</option>
-          <option value="jane">jane</option>
-        </select>
-        <button type="submit">add task</button>
-      </form>
+      <>
+        
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <input
+            type="text"
+            value={this.state.content}
+            name="content"
+            onChange={this.handleInputChange}
+          />
+          <select
+            value={this.state.user}
+            name="user"
+            onChange={this.handleInputChange}
+          >
+            <option value="anna">anna</option>
+            <option value="tom">tom</option>
+            <option value="mat">mat</option>
+            <option value="jane">jane</option>
+          </select>
+          <button type="submit">add task</button>
+        </form>
+      </>
     );
   }
 }
