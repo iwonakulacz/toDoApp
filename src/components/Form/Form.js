@@ -4,7 +4,8 @@ class Form extends React.Component {
   state = {
     id: new Date().getTime(),
     content: "",
-    user: ""
+    user: "",
+    checked: false
   };
 
   handleInputChange = e => {
@@ -17,13 +18,11 @@ class Form extends React.Component {
     e.preventDefault();
     const id = new Date().getTime();
     this.setState({
+      content: "",
+      user: "",
       id
     });
     this.props.addTask(this.state);
-    this.setState({
-      content: "",
-      user: ""
-    });
   };
 
   render() {
