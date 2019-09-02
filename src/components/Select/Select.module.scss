@@ -1,0 +1,41 @@
+.label {
+  position: relative;
+  &.filterLabel{
+    @media screen and (min-width: 991px) {
+      margin: 25px 0 0 auto;
+    }
+  }
+}
+.select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #24252b;
+  background: transparent;
+  padding: 5px 0;
+  margin-bottom: 20px;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid color(appBlue);
+  }
+  &.filter {
+    width: 150px;
+  }
+}
+
+.select:focus + .placeholder {
+  top: -20px;
+  font-size: 13px;
+}
+
+.placeholder {
+  color: color(appGray);
+  position: absolute;
+  top: 2px;
+  left: 0;
+  transition: 0.2s all ease;
+}
+
+.select:not(:placeholder-shown) + .placeholder {
+  top: -20px;
+  font-size: 13px;
+}

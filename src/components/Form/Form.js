@@ -2,7 +2,8 @@ import React from "react";
 import Select from "../Select/Select";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import users from '../../data/users';
+import users from "../../data/users";
+import styles from "./Form.module.scss";
 
 class Form extends React.Component {
   state = {
@@ -31,21 +32,21 @@ class Form extends React.Component {
 
   render() {
     return (
-      <>
-        <form onSubmit={e => this.handleSubmit(e)}>
+
+        <form className={styles.form} onSubmit={e => this.handleSubmit(e)} autoComplete="off">
           <Input
             value={this.state.content}
             name="content"
             onChangeFn={this.handleInputChange}
-          ></Input>
+          >Task to do...</Input>
           <Select
             value={this.state.user}
             name="user"
             onchangeFn={this.handleInputChange}
-          ></Select>
-          <Button type="submit">add to do</Button>
+          >Task for:</Select>
+          <Button type="submit">add task</Button>
         </form>
-      </>
+
     );
   }
 }

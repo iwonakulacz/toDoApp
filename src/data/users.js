@@ -1,13 +1,13 @@
 const users = [
-  "anna",
-  "john",
-  "george",
-  "james",
-  "harry",
-  "mary",
-  "jennifer",
-  "linda",
-  "barbara"
+  "Anna",
+  "John",
+  "George",
+  "James",
+  "Harry",
+  "Mary",
+  "Jennifer",
+  "Linda",
+  "Barbara"
 ];
 
 export default users;

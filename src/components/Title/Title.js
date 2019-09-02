@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Title.module.scss';
 
 const Title = ({children}) => (
-    <h1 className="title"> {children} </h1>
+    <h1 className={styles.title}> {children} </h1>
 )
 
 export default Title;

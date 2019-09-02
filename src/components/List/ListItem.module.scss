@@ -1,0 +1,45 @@
+.listItem {
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  animation: slideUp .5s;
+}
+
+.rightItems {
+  margin: 0 0 0 auto;
+}
+.user {
+  margin-right: 15px;
+  padding-left: 15px;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.trash {
+  opacity: 0.8;
+  color: #b54747;
+}
+
+.content{
+  margin-left: 20px;
+}
+.contentChecked{
+  margin-left: 20px;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+@keyframes slideUp{
+  0%{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
