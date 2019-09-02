@@ -1,4 +1,7 @@
 import React from "react";
+import Select from "../Select/Select";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
 
 class Form extends React.Component {
   state = {
@@ -28,25 +31,18 @@ class Form extends React.Component {
   render() {
     return (
       <>
-        
         <form onSubmit={e => this.handleSubmit(e)}>
-          <input
-            type="text"
+          <Input
             value={this.state.content}
             name="content"
-            onChange={this.handleInputChange}
-          />
-          <select
+            onChangeFn={this.handleInputChange}
+          ></Input>
+          <Select
             value={this.state.user}
             name="user"
-            onChange={this.handleInputChange}
-          >
-            <option value="anna">anna</option>
-            <option value="tom">tom</option>
-            <option value="mat">mat</option>
-            <option value="jane">jane</option>
-          </select>
-          <button type="submit">add task</button>
+            onchangeFn={this.handleInputChange}
+          ></Select>
+          <Button type="submit">add to do</Button>
         </form>
       </>
     );

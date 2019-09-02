@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const Input = () => (
-    <input type="text"/>
-)
+const Input = ({ value, name, onChangeFn, type='text', ...props }) => (
+  <input
+    type={type}
+    value={value}
+    name={name}
+    onChange={onChangeFn}
+    {...props}
+  />
+);
 
 export default Input;

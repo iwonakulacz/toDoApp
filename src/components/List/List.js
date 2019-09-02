@@ -1,21 +1,28 @@
 import React from "react";
+import ListItem from "./ListItem";
 
-const List = ({ items, removeTask, handleCheck }) => (
+const List = ({ items, removeTask, handleCheck, selectedUser }) => (
   <>
-    {items.length ? (
+    {items.filter(item =>
+      selectedUser === "all" ? item : item.user === selectedUser
+    ).length ? (
       <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            <input type="checkbox" onChange={() => handleCheck(item)} checked={item.checked}/>
-            <span>
-              {item.content}, {item.user}
-            </span>
-            <span onClick={() => removeTask(item)}>X</span>
-          </li>
-        ))}
+        {items.map(item => {
+          if (item.user === selectedUser || selectedUser === "all") {
+            return (
+              <ListItem
+                item={item}
+                handleCheckFn={() => handleCheck(item)}
+                handleRemoveFn={() => removeTask(item)}
+              ></ListItem>
+            );
+          } else {
+            return null;
+          }
+        })}
       </ul>
     ) : (
-      <h1>There's nothing here yet, please add some items!</h1>
+      <h1>There's nothing to do!</h1>
     )}
   </>
 );

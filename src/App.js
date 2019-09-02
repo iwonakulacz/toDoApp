@@ -2,6 +2,8 @@ import React from "react";
 import "./index.css";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
+import Title from './components/Title/Title';
+import Select from './components/Select/Select';
 
 const initArray = [
   {
@@ -40,22 +42,12 @@ class App extends React.Component {
   state = {
     tasks: [...initArray],
     selectedUser: "all",
-    sortedList: [...initArray]
   };
 
   addTask = task => {
     const tasks = [...this.state.tasks, task];
-    let sorted = [];
-    if (this.state.selectedUser !== "all") {
-      sorted = tasks.filter(item => {
-        return item.user === this.state.selectedUser;
-      });
-    } else {
-      sorted = tasks;
-    }
     this.setState(({
-      tasks,
-      sortedList: [...sorted]
+      tasks
     }));
   };
 
@@ -63,32 +55,13 @@ class App extends React.Component {
     const tasks = this.state.tasks.filter(task => {
       return task.id !== item.id;
     });
-    let sorted = [];
-    if (this.state.selectedUser !== "all") {
-      sorted = tasks.filter(item => {
-        return item.user === this.state.selectedUser;
-      });
-    } else {
-      sorted = tasks;
-    }
-
     this.setState({
-      tasks,
-      sortedList: sorted
+      tasks
     });
   };
 
   sortList = e => {
-    let sorted = [];
-    if (e.target.value === "all") {
-      sorted = [...this.state.tasks];
-    } else {
-      sorted = this.state.tasks.filter(item => {
-        return item.user.search(e.target.value) !== -1;
-      });
-    }
     this.setState({
-      sortedList: sorted,
       selectedUser: e.target.value
     });
   };
@@ -96,45 +69,29 @@ class App extends React.Component {
   handleCheck = item => {
     const tasks = this.state.tasks.map(task => {
       if(item.id === task.id){
-        item.checked = !item.checked;
-        return item;
+        task.checked = !task.checked;
+        return task;
       } else {
         return task;
       }
     });
-    let sorted = [];
-    if (this.state.selectedUser === "all") {
-      sorted = [...tasks];
-    } else {
-      sorted = tasks.filter(item => {
-        return item.user === this.state.selectedUser;
-      });
-    }
     this.setState({
-      tasks,
-      sortedList: sorted
+      tasks
     })
   }
 
   render() {
     return (
       <>
-        <h1 className="title"> to do list </h1>
+        <Title>to do app</Title>
         <Form addTask={this.addTask} />
-        <select
-          onChange={e => this.sortList(e)}
-          value={this.state.selectedUser}
-        >
-          <option value="all">all</option>
-          <option value="anna">anna</option>
-          <option value="tom">tom</option>
-          <option value="mat">mat</option>
-          <option value="jane">jane</option>
-        </select>
+        <Select onchangeFn={e => this.sortList(e)}
+          value={this.state.selectedUser} filterList></Select>
         <List
-          items={this.state.sortedList}
+          items={this.state.tasks}
           removeTask={this.removeTask}
           handleCheck={this.handleCheck}
+          selectedUser={this.state.selectedUser}
         />
       </>
     );
