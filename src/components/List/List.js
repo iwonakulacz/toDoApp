@@ -1,7 +1,8 @@
 import React from "react";
 import ListItem from "./ListItem";
+import PropTypes from 'prop-types';
 
-const List = ({ items, removeTask, handleCheck, selectedUser }) => (
+const List = ({ items, selectedUser }) => (
   <>
     {items.filter(item =>
       selectedUser === "all" ? item : item.user === selectedUser
@@ -11,9 +12,8 @@ const List = ({ items, removeTask, handleCheck, selectedUser }) => (
           if (item.user === selectedUser || selectedUser === "all") {
             return (
               <ListItem
+                key={item.id}
                 item={item}
-                handleCheckFn={() => handleCheck(item)}
-                handleRemoveFn={() => removeTask(item)}
               ></ListItem>
             );
           } else {
@@ -27,4 +27,8 @@ const List = ({ items, removeTask, handleCheck, selectedUser }) => (
   </>
 );
 
+List.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+  selectedUser: PropTypes.string.isRequired
+}
 export default List;

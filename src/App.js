@@ -4,7 +4,7 @@ import Form from "./components/Form/Form";
 import List from "./components/List/List";
 import Title from './components/Title/Title';
 import Select from './components/Select/Select';
-
+import AppContext from './context';
 const initArray = [
   {
     id: 1,
@@ -81,19 +81,22 @@ class App extends React.Component {
   }
 
   render() {
+    const contextItems= {
+      ...this.state,
+      removeTask: this.removeTask,
+      handleCheck: this.handleCheck
+    }
     return (
-      <>
+      <AppContext.Provider value={contextItems}>
         <Title>to do app</Title>
         <Form addTask={this.addTask} />
         <Select onchangeFn={e => this.sortList(e)}
-          value={this.state.selectedUser} filterList></Select>
+          value={this.state.selectedUser} filterlist='true'></Select>
         <List
           items={this.state.tasks}
-          removeTask={this.removeTask}
-          handleCheck={this.handleCheck}
           selectedUser={this.state.selectedUser}
         />
-      </>
+      </AppContext.Provider>
     );
   }
 }

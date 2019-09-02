@@ -7,7 +7,7 @@ class Form extends React.Component {
   state = {
     id: new Date().getTime(),
     content: "",
-    user: "",
+    user: "anna",
     checked: false
   };
 
