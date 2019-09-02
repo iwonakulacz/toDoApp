@@ -5,42 +5,11 @@ import List from "./components/List/List";
 import Title from './components/Title/Title';
 import Select from './components/Select/Select';
 import AppContext from './context';
-const initArray = [
-  {
-    id: 1,
-    content: "make a weather app",
-    user: "anna",
-    checked: false
-  },
-  {
-    id: 2,
-    content: "buy a milk",
-    user: "mat",
-    checked: false
-  },
-  {
-    id: 3,
-    content: "lorem ipsum et dorom solo",
-    user: "tom",
-    checked: false
-  },
-  {
-    id: 4,
-    content: "fix the bugs",
-    user: "jane",
-    checked: false
-  },
-  {
-    id: 5,
-    content: "clean dishes",
-    user: "anna",
-    checked: false
-  }
-];
+import initTasks from './data/initTasks';
 
 class App extends React.Component {
   state = {
-    tasks: [...initArray],
+    tasks: [...initTasks],
     selectedUser: "all",
   };
 
