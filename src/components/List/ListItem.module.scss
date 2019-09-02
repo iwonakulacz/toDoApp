@@ -26,11 +26,12 @@
 
 .content{
   margin-left: 20px;
+
 }
 .contentChecked{
   margin-left: 20px;
-  text-decoration: line-through;
   opacity: 0.8;
+  text-decoration: line-through;
 }
 
 @keyframes slideUp{
