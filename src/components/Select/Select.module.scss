@@ -1,12 +1,10 @@
 .label {
   position: relative;
-  &.filterLabel{
-    @media screen and (min-width: 991px) {
-      margin: 25px 0 0 auto;
-    }
-  }
 }
 .select {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #24252b;
   width: 100%;
   border: none;
   border-bottom: 1px solid #24252b;
@@ -15,27 +13,24 @@
   margin-bottom: 20px;
   &:focus {
     outline: none;
-    border-bottom: 2px solid color(appBlue);
+    & + .placeholder{
+      transform: translateY(-21px);
+      font-size: 13px;
+    }
   }
-  &.filter {
-    width: 150px;
-  }
-}
-
-.select:focus + .placeholder {
-  top: -20px;
-  font-size: 13px;
 }
 
 .placeholder {
-  color: color(appGray);
   position: absolute;
-  top: 2px;
-  left: 0;
+  top: 6px;
+  left: 4px;
   transition: 0.2s all ease;
+  &.moveTop {
+    transform: translateY(-21px);
+    font-size: 13px;
+  }
+}
+option{
+  background-color: #f7f7f7;
 }
 
-.select:not(:placeholder-shown) + .placeholder {
-  top: -20px;
-  font-size: 13px;
-}

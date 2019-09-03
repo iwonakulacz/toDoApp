@@ -6,29 +6,30 @@
   border: none;
   border-bottom: 1px solid #24252b;
   background: transparent;
-  padding: 5px 0;
+  padding: 5px 3px;
   margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #24252B;
   &:focus {
     outline: none;
-    border-bottom: 2px solid color(appBlue);
   }
 }
 
 .input:focus + .placeholder {
-  top: -20px;
+  top: -17px;
   font-size: 13px;
 }
 
 .placeholder {
-  color: color(appGray);
   position: absolute;
-  top: 2px;
-  left: 0;
+  top: 5px;
+  left: 3px;
   transition: 0.2s all ease;
 }
 
 .input:not(:placeholder-shown) + .placeholder {
-  top: -20px;
+  top: -17px;
   font-size: 13px;
 }
 
@@ -36,6 +37,9 @@
   position: relative;
   opacity: 0;
   z-index: -1;
+  &:focus + .checked{
+    border: 1px solid #4272ac;
+  }
 }
 
 .checked {
@@ -43,13 +47,13 @@
   top: 0;
   left: 0;
   border: 1px solid #333540;
-  background: #e2e2e2;
+  background: transparent;
   width: 20px;
   height: 20px;
   vertical-align: bottom;
 }
 .icon {
     transform: translateX(2px) translateY(-4px);
-    color: #04c163;
+    color: #169e1c;
     font-size: 22px;
 }

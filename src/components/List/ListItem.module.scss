@@ -2,11 +2,11 @@
   margin-bottom: 20px;
   padding: 20px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgb(232, 232, 232);
   display: flex;
   flex-direction: row;
   font-size: 16px;
-  animation: slideUp .5s;
+  animation: slideUp 0.5s;
 }
 
 .rightItems {
@@ -21,25 +21,27 @@
 
 .trash {
   opacity: 0.8;
-  color: #b54747;
+  color: #344e48;
+  padding: 2px;
+  background: transparent;
+  border: none;
 }
 
-.content{
+.content {
   margin-left: 20px;
-
 }
-.contentChecked{
+.contentChecked {
   margin-left: 20px;
   opacity: 0.8;
   text-decoration: line-through;
 }
 
-@keyframes slideUp{
-  0%{
+@keyframes slideUp {
+  0% {
     opacity: 0;
     transform: translateY(-20px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }

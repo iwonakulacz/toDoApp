@@ -2,14 +2,13 @@ import React from "react";
 import Select from "../Select/Select";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import users from "../../data/users";
 import styles from "./Form.module.scss";
 
 class Form extends React.Component {
   state = {
     id: new Date().getTime(),
     content: "",
-    user: users[0],
+    user: '',
     checked: false
   };
 

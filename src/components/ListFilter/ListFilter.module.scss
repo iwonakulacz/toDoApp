@@ -1,0 +1,21 @@
+.label {
+  margin: 0 0 20px auto;
+}
+.labelText {
+  margin-right: 10px;
+}
+.select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #24252b;
+  background: transparent;
+  padding: 5px 0;
+  width: 140px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #24252b;
+  &:focus{
+      outline: none;
+      font-weight: 700;
+  }
+}

@@ -1,23 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import users from "../../data/users";
-import styles from "./Select.module.scss";
+import styles from "./ListFilter.module.scss";
 
-class Select extends React.Component {
+class ListFilter extends React.Component {
   render() {
-    const { onchangeFn, value, children, ...props } = this.props;
-    const moveTop = [styles.moveTop, styles.placeholder].join(" ");
+    const { filterlist, onchangeFn, value, children, ...props } = this.props;
     return (
       <>
         <label className={styles.label}>
-          
+          <span className={styles.labelText}>{children}</span>
           <select
             onChange={onchangeFn}
             value={value}
             {...props}
             className={styles.select}
           >
-            <option disabled={value ? true : null}></option>
+            <option value="all">all</option>
             {users.map(user => {
               return (
                 <option value={user} key={user}>
@@ -26,18 +25,15 @@ class Select extends React.Component {
               );
             })}
           </select>
-          <span className={value ? moveTop : styles.placeholder}>
-            {children}
-          </span>
         </label>
       </>
     );
   }
 }
 
-Select.propTypes = {
+ListFilter.propTypes = {
   onchangeFn: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired
 };
 
-export default Select;
+export default ListFilter;

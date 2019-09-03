@@ -30,6 +30,7 @@ const Input = ({ value, name, onChangeFn, type, children, ...props }) => (
           onChange={onChangeFn}
           className={styles.input}
           placeholder=" "
+          required
         />
         <span className={styles.placeholder}>{children}</span>
       </label>
