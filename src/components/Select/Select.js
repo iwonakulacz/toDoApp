@@ -15,6 +15,7 @@ class Select extends React.Component {
             value={value}
             {...props}
             className={styles.select}
+            required
           >
             <option disabled={value ? true : null}></option>
             {users.map(user => {
