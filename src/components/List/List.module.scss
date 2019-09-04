@@ -1,13 +1,22 @@
-.list{
-    list-style: none;
+.list {
+  list-style: none;
+  position: relative;
 }
-.noItems{
-    opacity: .8;
-    text-align: center;
-    margin: 50px 0;
+.noItems {
+  opacity: 0.8;
+  text-align: center;
+  margin: 50px 0;
 }
-.textRight{
-    padding: 0 5px;
-    text-align: right;
-    opacity: .8;
+.tasksLeft {
+  text-align: right;
+  width: 100%;
+  display: block;
+  padding: 0 10px 20px 10px;
+  @media screen and(min-width: 991px) {
+    position: absolute;
+    top: -47px;
+    left: 0;
+    text-align: left;
+    width: unset;
+  }
 }

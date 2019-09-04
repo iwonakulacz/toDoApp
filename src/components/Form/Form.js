@@ -41,7 +41,7 @@ class Form extends React.Component {
             name="content"
             onChangeFn={this.handleInputChange}
           >
-            Task to do...
+            To do...
           </Input>
           <Select
             value={this.state.user}
@@ -50,7 +50,7 @@ class Form extends React.Component {
           >
             Task for:
           </Select>
-          <Button type="submit">add task</Button>
+          <Button type="submit">add</Button>
         </form>
     );
   }

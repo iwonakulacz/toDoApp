@@ -9,7 +9,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const ListItem = ({ item }) => (
   <AppContext.Consumer>
     {context => (
-      <li className={styles.listItem}>
+      <li className={item.checked ? [styles.listItem, styles.checkedItem].join(' ') : styles.listItem}>
         <Input
           key={item.key}
           type="checkbox"

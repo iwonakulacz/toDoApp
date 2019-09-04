@@ -13,6 +13,7 @@
   color: #24252b;
   &:focus {
     outline: none;
+    border-bottom: 1px solid #3aafa9;
   }
 }
 
@@ -37,8 +38,8 @@
   position: relative;
   opacity: 0;
   z-index: -1;
-  &:focus + .checked {
-    border: 1px solid #4272ac;
+  &:focus + .styledCheckbox {
+    border: 1px solid #3aafa9;
   }
 }
 
@@ -53,7 +54,7 @@
   vertical-align: bottom;
   .icon {
     transform: translateX(2px) translateY(-4px);
-    color: #169e1c;
+    color: #1fa20f;
     font-size: 22px;
   }
 }
