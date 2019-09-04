@@ -11,20 +11,21 @@ const ListItem = ({ item }) => (
     {context => (
       <li className={styles.listItem}>
         <Input
+          key={item.key}
           type="checkbox"
           checked={item.checked}
           onChangeFn={() => context.handleCheck(item)}
         ></Input>
-        <p className={item.checked ? styles.contentChecked : styles.content}>
-          {item.content}
-        </p>
+          <p className={item.checked ? [styles.content, styles.checked].join(' ') : styles.content}>
+            {item.content}
+          </p>
         <div className={styles.rightItems}>
           {context.selectedUser === "all" ? (
             <span className={styles.user}>{item.user}</span>
           ) : null}
           <button
             className={styles.trash}
-            onClick={() => context.removeTask(item)}
+            onClickFn={() => context.removeTask(item)}
           >
             <FontAwesomeIcon icon={faTimes} />
           </button>

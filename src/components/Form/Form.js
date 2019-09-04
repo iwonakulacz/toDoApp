@@ -8,7 +8,7 @@ class Form extends React.Component {
   state = {
     id: new Date().getTime(),
     content: "",
-    user: '',
+    user: "",
     checked: false
   };
 
@@ -22,30 +22,36 @@ class Form extends React.Component {
     e.preventDefault();
     const id = new Date().getTime();
     this.setState({
+      id,
       content: "",
-      user: "",
-      id
+      user: ""
     });
     this.props.addTask(this.state);
   };
 
   render() {
     return (
-
-        <form className={styles.form} onSubmit={e => this.handleSubmit(e)} autoComplete="off">
+        <form
+          className={styles.form}
+          onSubmit={e => this.handleSubmit(e)}
+          autoComplete="off"
+        >
           <Input
             value={this.state.content}
             name="content"
             onChangeFn={this.handleInputChange}
-          >Task to do...</Input>
+          >
+            Task to do...
+          </Input>
           <Select
             value={this.state.user}
             name="user"
             onchangeFn={this.handleInputChange}
-          >Task for:</Select>
+          >
+            Task for:
+          </Select>
           <Button type="submit">add task</Button>
         </form>
-
     );
   }
 }

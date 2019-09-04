@@ -10,7 +10,6 @@ class Select extends React.Component {
     return (
       <>
         <label className={styles.label}>
-          
           <select
             onChange={onchangeFn}
             value={value}

@@ -11,7 +11,7 @@ import styles from "./App.module.scss";
 class App extends React.Component {
   state = {
     tasks: [...initTasks],
-    selectedUser: 'all'
+    selectedUser: "all"
   };
 
   addTask = task => {
@@ -60,13 +60,14 @@ class App extends React.Component {
       <AppContext.Provider value={contextItems}>
         <Title>to do app</Title>
         <main className={styles.wrapper}>
-          <Form addTask={this.addTask} selectedUser={this.props.selectedUser}/>
+          <Form addTask={this.addTask} selectedUser={this.props.selectedUser} />
           <div className={styles.listwrapper}>
             <ListFilter
               onchangeFn={e => this.sortList(e)}
               value={this.state.selectedUser}
-              filterlist="true"
-            >show tasks for</ListFilter>
+            >
+              show tasks for
+            </ListFilter>
             <List
               items={this.state.tasks}
               selectedUser={this.state.selectedUser}

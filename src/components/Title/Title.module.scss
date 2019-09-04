@@ -1,7 +1,10 @@
 .title{
     text-align: center;
     color: #344e48;
-    margin: 30px;
+    margin: 50px auto;
     font-size: 66px;
     font-family: 'Allura', cursive;
+    @media screen and(min-width: 992px){
+        margin: 30px auto;
+    }
 }

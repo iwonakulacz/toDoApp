@@ -5,7 +5,7 @@ import styles from "./ListFilter.module.scss";
 
 class ListFilter extends React.Component {
   render() {
-    const { filterlist, onchangeFn, value, children, ...props } = this.props;
+    const { onchangeFn, value, children} = this.props;
     return (
       <>
         <label className={styles.label}>
@@ -13,7 +13,6 @@ class ListFilter extends React.Component {
           <select
             onChange={onchangeFn}
             value={value}
-            {...props}
             className={styles.select}
           >
             <option value="all">all</option>

@@ -16,7 +16,7 @@ const Input = ({ value, name, onChangeFn, type, children, ...props }) => (
             {...props}
             className={styles.checkbox}
           />
-          <span className={styles.checked}>
+          <span className={styles.styledCheckbox}>
             {props.checked ? <FontAwesomeIcon icon={faCheck} className={styles.icon}/> : null}
           </span>
         </label>

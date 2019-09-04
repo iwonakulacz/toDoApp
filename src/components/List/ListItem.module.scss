@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: row;
   font-size: 16px;
-  animation: slideUp 0.5s;
 }
 
 .rightItems {
@@ -29,20 +28,10 @@
 
 .content {
   margin-left: 20px;
-}
-.contentChecked {
-  margin-left: 20px;
-  opacity: 0.8;
-  text-decoration: line-through;
+  transition: .2s ease-in-out;
+  &.checked{
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

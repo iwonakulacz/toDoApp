@@ -22,12 +22,6 @@ const initTasks = [
     content: "Excepteur sint occaecat cupidatat non proident",
     user: "John",
     checked: false
-  },
-  {
-    id: 5,
-    content: "Sed ut perspiciatis unde omnis iste natus",
-    user: "Anna",
-    checked: false
   }
 ];
 

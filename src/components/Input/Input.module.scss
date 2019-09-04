@@ -10,7 +10,7 @@
   margin-bottom: 40px;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  color: #24252B;
+  color: #24252b;
   &:focus {
     outline: none;
   }
@@ -37,12 +37,12 @@
   position: relative;
   opacity: 0;
   z-index: -1;
-  &:focus + .checked{
+  &:focus + .checked {
     border: 1px solid #4272ac;
   }
 }
 
-.checked {
+.styledCheckbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -51,9 +51,9 @@
   width: 20px;
   height: 20px;
   vertical-align: bottom;
-}
-.icon {
+  .icon {
     transform: translateX(2px) translateY(-4px);
     color: #169e1c;
     font-size: 22px;
+  }
 }
