@@ -25,7 +25,7 @@ const ListItem = ({ item }) => (
           ) : null}
           <button
             className={styles.trash}
-            onClickFn={() => context.removeTask(item)}
+            onClick={() => context.removeTask(item)}
           >
             <FontAwesomeIcon icon={faTimes} />
           </button>
